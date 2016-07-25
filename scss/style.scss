@@ -18,13 +18,6 @@ a {
     text-decoration: none;
 }
 
-.button.button-primary:hover {
-    background-color: whitesmoke;
-    color:#717070;
-    border:none;
-    text-transform: none;
-}
-
 header.container.header_with_logo {  
     padding: 18px 0;
 //    img_box {
@@ -108,6 +101,12 @@ header.container.header_with_logo {
             border: none;
             border-radius: 5px;
             text-transform: none;
+            &:hover {
+                background-color: whitesmoke;
+                color:#717070;
+                border:none;
+                text-transform: none;
+            }
         }
     }
 }
@@ -188,38 +187,44 @@ section.container.menu {
         border-top-left-radius: 11px;
         border-bottom-left-radius: 11px;
         div{
-                color:#ffffff;
-                position:relative;
-                top:12px;
-                left:24px;
-                p {
-                    display: none;
-                    font-size: 1.3rem;
-                    font-weight: 100;
-                    position: relative;
-                    top:13px;
-                }
-                h3 {
-                    font-size:1.85rem;
-                    letter-spacing: 0;
-                    line-height: 18px;
-                    font-weight: 400;
-                }
-            }
-            a {
-                background-color: black;
-                border:none;
-                padding: 0;
-                height: 32px;
-                width: 130px;
+            color:#ffffff;
+            position:relative;
+            top:12px;
+            left:24px;
+            p {
+                display: none;
+                font-size: 1.3rem;
                 font-weight: 100;
-                font-size: 1.55rem;
-                line-height: 32px;
+                position: relative;
+                top:13px;
+            }
+            h3 {
+                font-size:1.85rem;
                 letter-spacing: 0;
-                border-radius: 10px;
-                position: absolute;
-                top:40px;
-                left: 80px;
+                line-height: 18px;
+                font-weight: 400;
+            }
+        }
+        a {
+            background-color: black;
+            border:none;
+            padding: 0;
+            height: 32px;
+            width: 130px;
+            font-weight: 100;
+            font-size: 1.55rem;
+            line-height: 32px;
+            letter-spacing: 0;
+            border-radius: 10px;
+            position: absolute;
+            top:40px;
+            left: 80px;
+            &:hover {
+                background-color: whitesmoke;
+                color:#717070;
+                border:none;
+                text-transform: none;
+            }
         }
     }
 }
@@ -252,22 +257,76 @@ section.container.credit_section {
         font-size: 2.2rem;
         margin-bottom: 12px;
     }
+    a {
+        float:right;
+        text-decoration: underline;
+        font-size: 1.6rem;
+    }
+    a::after {
+        clear: both;
+        content: ".";
+        display: none;
+        height: 0;
+    }
     .credit_text_box {
         max-width:90%; //41%
         p {
             font-size: 1.5rem; //1.4
             margin-bottom: 8px; // 25px;
         }
-        a {
-            float:right;
-            text-decoration: underline;
-            font-size: 1.6rem;
-        }
-        a::after {
-            clear: both;
+    }
+    .sliders {
+        min-width:220px;
+    }
+    label, span {
+        font-size: 1.3rem;
+        font-weight: 400;
+    }
+    .pln, .czas_opis {
+        float: right;
+        &::after {
             content: ".";
             display: none;
+            clear: both;
             height: 0;
+        }
+    }
+    .slider {
+        margin-bottom: 35px;
+        margin-top:10px;
+    }
+    .rata_pln, .rata {
+        color:#50c5da;
+        font-weight: 600;
+        font-size: 1.8rem;
+    }
+    .rata_calosc {
+        font-size: 1.8rem;
+    }
+    div.slider.ui-slider.ui-corner-all.ui-slider-horizontal.ui-widget.ui-widget-content, div.ui-slider-range.ui-corner-all.ui-widget-header.ui-slider-range-max {
+        border: none;
+        background-color: #ebebeb;
+        height:2rem;
+        border-bottom-right-radius:0;
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        span.ui-slider-handle.ui-corner-all.ui-state-default {
+            box-sizing: border-box;
+            height:3.6rem;
+            width:6rem;
+            padding: .6rem 2rem;
+            font-size: 1.5rem;
+            border: none;
+            border-radius: 7px;
+            color:white;
+            background-color: #50c5da;
+            top:-.8rem;
+            margin-left: -3rem;
+            cursor: pointer;
+            &::after {
+                content:"| | |";
+            }
         }
     }
 }
@@ -309,6 +368,12 @@ section.container.icons_section {
             line-height: 35px;
             margin-bottom: 0;
             padding:0;
+            &:hover {
+                background-color: whitesmoke;
+                color:#717070;
+                border:none;
+                text-transform: none;
+            }
         }
     }
 }
@@ -320,21 +385,23 @@ section.container.clients_section {
     padding-top: 35px;
     padding-bottom: 30px;
     color:#717070;
-    ul.four.columns {
-        width:100%;
-        text-align: center;
-        list-style: none;
+    div.four.columns {
         h6 {
+                width:100%;
+                text-align: center;
+                font-size: 1.8rem;
+                font-weight: 600;
+                cursor: pointer;
+            }
+        ul {
             width:100%;
             text-align: center;
-            font-size: 1.8rem;
-            font-weight: 600;
-            cursor: pointer;
-        }
-        li {
+            list-style: none;
             display:none;
-            font-size: 1.2rem;
-            margin-bottom: .5rem;
+            li {
+                font-size: 1.2rem;
+                margin-bottom: .5rem;
+            }
         }
     }
 }
@@ -345,10 +412,10 @@ section.container.clients_section {
     font-weight: 100;
     div {
         color: #a0a0a0;
-        font-size: 1.2rem;
-        line-height: 2rem;
+        font-size: .9rem;
+        line-height: 1.5rem;
         span {
-            font-size: 1.6rem;
+            font-size: 1.3rem;
         }
     }
     ul {
@@ -369,14 +436,6 @@ section.container.clients_section {
         }
     }
 }
-
-//dla bezpieczny bank jak kolumny wchodza na siebie ustawic (i relative dla rodzica ofc)
-//    position: absolute;
-//    right: 60px;
-//    width: 200px;
-// ustawic dla burgera wiekszy padding u gory 
-//i ustawic ze jak bardzo mala szerokosc to bezpieczny bank gdzies znika
-
 
 
 
@@ -515,9 +574,8 @@ section.container.clients_section {
         justify-content: center;
         align-items: flex-start;
         color:#717070;
-        ul.four.columns {
+        div.four.columns {
             width:33.33%;
-            text-align: left;
             h6 {
                 text-align: left;
                 font-size: 1.1rem;
@@ -526,10 +584,36 @@ section.container.clients_section {
                 left:-15px;
                 cursor: auto;
             }
+            ul {
+                text-align: left;
+                li {
+                    display: list-item;
+                    font-size: 1rem;
+                    list-style: square;
+                }
+            }
+        }
+    }
+    
+    
+    .footer {
+        padding: 8px 0 50px 2px;
+        font-weight: 100;
+        div {
+            font-size: .8rem;
+            line-height: 1.1rem;
+            span {
+                font-size: 1.1rem;
+            }
+        }
+        ul {
+            margin-top: 9px;
             li {
-                display: list-item;
-                font-size: 1rem;
-                list-style: square;
+                padding: 0 2px;
+                line-height: .65rem;
+                a {
+                    font-size: .65rem;
+                }
             }
         }
     }
@@ -619,7 +703,7 @@ section.container.clients_section {
     
     
     section.container.credit_section {
-        padding-top:70px;
+        padding-top:65px;
         padding-bottom:45px;
         div.seven.columns {
             width: 56%;
@@ -628,6 +712,7 @@ section.container.clients_section {
         div.five.columns {
             width: 41%;
             margin-left: 3%;
+            padding-right: 11%; 
         }
         .columns {
             display:inline-block;
@@ -637,6 +722,9 @@ section.container.clients_section {
             font-size: 2.6rem;
             text-align: left;
         }
+        a {
+                font-size: 1.8rem;
+        }
         .credit_text_box {
             display: inline-block;
             max-width:85%;
@@ -644,9 +732,6 @@ section.container.clients_section {
             p {
                 font-size: 1.3rem;
                 margin-bottom: 25px;
-            }
-            a {
-                font-size: 1.8rem;
             }
         }
     }
@@ -692,16 +777,40 @@ section.container.clients_section {
         justify-content: center;
         align-items: center;
         color:#717070;
-        ul {
-            list-style: square;
+        div.four.columns {
             h6 {
-                font-size: 1.5rem;
-                font-weight: 600;
-                position: relative;
-                left:-20px;
+                    font-size: 1.5rem;
+                    font-weight: 600;
+                    position: relative;
+                    left:-20px;
             }
-            li {
+            ul {
+                list-style: square;
+                li {
+                    font-size: 1.2rem;
+                }
+            }
+        }
+    }
+    
+    .footer {
+        padding: 10px 0 50px 8px;
+        font-weight: 100;
+        div {
+            font-size: .95rem;
+            line-height: 1.3rem;
+            span {
                 font-size: 1.2rem;
+            }
+        }
+        ul {
+            margin-top: 11px;
+            li {
+                padding: 0 3px;
+                line-height: .8rem;
+                a {
+                    font-size: .9rem;
+                }
             }
         }
     }
@@ -749,9 +858,15 @@ section.container.clients_section {
             margin-top: 16px;
             margin-left: 15px;
         }
+        h5 {
+            margin-bottom: 15px;
+        }
         .credit_text_box {
             max-width:48%;
             padding-left: 19px;
+            h5 {
+                margin-bottom: 30px;
+            }
         }
     }
     
@@ -782,17 +897,43 @@ section.container.clients_section {
         justify-content: center;
         align-items: center;
         color:#717070;
-        ul {
-            list-style: square;
-            font-size: 1.4rem;
+        div.four.columns {
             h6 {
-                font-size: 1.8rem;
-                font-weight: 600;
-                position: relative;
-                left:-20px;
+                    font-size: 1.8rem;
+                    font-weight: 600;
+                    position: relative;
+                    left:-20px;
+                }
+            ul {
+                li {
+                    font-size: 1.4rem;
+                }
             }
         }
     }
+    
+    .footer {
+        padding: 12px 0 50px 8px;
+        font-weight: 100;
+        div {
+            font-size: 1.1rem;
+            line-height: 1.7rem;
+            span {
+                font-size: 1.3rem;
+            }
+        }
+        ul {
+            margin-top: 18px;
+            li {
+                padding: 0 5px;
+                a {
+                    font-size: 1.1rem;
+                    line-height: .8rem;
+                }
+            }
+        }
+    }
+    
     
 }
 
@@ -813,13 +954,13 @@ section.container.clients_section {
 //    }
     
     section.container.credit_section {
+        h5 {
+                font-size: 2.8rem;
+        }
         .credit_text_box {
             max-width:41%;
             p {
                 font-size: 1.4rem;
-            }
-            h5 {
-                font-size: 2.8rem;
             }
         }
     }
@@ -853,6 +994,24 @@ section.container.clients_section {
                 font-weight: 100;
                 line-height: 50px;
                 margin-bottom: 0;
+            }
+        }
+    }
+    
+    
+    .footer {
+        div {
+            font-size: 1.2rem;
+            line-height: 2rem;
+            span {
+                font-size: 1.6rem;
+            }
+        }
+        ul {
+            margin-top: 20px;
+            li {
+                font-size: 1.4rem;
+                line-height: 1.1rem;
             }
         }
     }
